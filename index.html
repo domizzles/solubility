@@ -22,7 +22,7 @@
                         <div class="panel-heading">
                             <h3 class="panel-title">Correct</h3>
                         </div>
-                        <div class="panel-body">
+                        <div id="correct" class="panel-body">
                             0
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                         <div class="panel-heading">
                             <h3 class="panel-title">Incorrect</h3>
                         </div>
-                        <div class="panel-body">
+                        <div id="incorrect" class="panel-body">
                             0
                         </div>
                     </div>
@@ -69,8 +69,13 @@
     function answer (answer) {
         $('#precipitation').attr('disabled', 'true');
         $('#noprecipitation').attr('disabled', 'true');
-        if(answer === problem.bool) answerString = answerString + 'Correct! ';
-        else answerString = answerString + 'Incorrect! ';
+        if(answer === problem.bool) {
+            answerString = answerString + 'Correct! ';
+            $('#correct').text(parseInt($('#correct').text()) + 1);
+        } else {
+            answerString = answerString + 'Incorrect! ';
+            $('#incorrect').text(parseInt($('#incorrect').text()) + 1);
+        }
         answerString = answerString + problem.solution;
         $('#answer').text(answerString);
     }
