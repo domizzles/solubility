@@ -44,10 +44,10 @@
                             <h3 id="question">Welcome!</h3>
                             <h5 id="answer">Press "New Question" to begin!</h5>
 
-                            <button id="precipitation" type="button" class="btn btn-default" aria-label="Left Align">
+                            <button disabled="true" id="precipitation" type="button" class="btn btn-default" aria-label="Left Align">
                                 <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> Precipitation
                             </button>
-                            <button id="noprecipitation" type="button" class="btn btn-default" aria-label="Left Align">
+                            <button disabled="true" id="noprecipitation" type="button" class="btn btn-default" aria-label="Left Align">
                                 <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span> No Precipitation
                             </button>
                             <button id="newplz" type="button" class="btn btn-default" aria-label="Left Align">
@@ -67,6 +67,8 @@
     var answerString = '';
 
     function answer (answer) {
+        $('#precipitation').attr('disabled', 'true');
+        $('#noprecipitation').attr('disabled', 'true');
         if(answer === problem.bool) answerString = answerString + 'Correct! ';
         else answerString = answerString + 'Incorrect! ';
         answerString = answerString + problem.solution;
@@ -84,6 +86,8 @@
     $('#newplz').click(function () {
         $('#question').text('');
         $('#answer').text('');
+        $('#precipitation').removeAttr('disabled');
+        $('#noprecipitation').removeAttr('disabled');
         answerString = '';
         $.ajax({
             url: '/problem',
