@@ -70,13 +70,13 @@ module.exports = {
 
     getAnswer: function () {
         if (this.precipitate1 && this.precipitate2)
-            this.feedback = this.precip1 + " and " + this.precip2 + " forms";
+            this.feedback = this.precip1 + ' and ' + this.precip2 + ' forms';
         else if (this.precipitate1)
-            this.feedback = this.precip1 + " forms";
+            this.feedback = this.precip1 + ' forms';
         else if (this.precipitate2)
-            this.feedback = this.precip2;
+            this.feedback = this.precip2 + ' forms';
         else
-            this.feedback = "Nothing forms";
+            this.feedback = 'Nothing forms';
         return this.feedback;
     },
 

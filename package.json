@@ -6,13 +6,12 @@
   "repository": {
     "url": "git@github.com:domizzles/solubility.git"
   },
-
   "main": "SolubilityCLI.js",
   "scripts": {
     "test": "npm install; node SolubilityCLI.js"
   },
-
   "dependencies": {
+    "express": "^4.12.3",
     "prompt": "^0.2.14"
   }
 }

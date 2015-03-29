@@ -1,6 +1,6 @@
 var prompt = require('prompt');
 
-var SolubilityProblem = require('./SolubilityProblem');
+var SolubilityProblem = require('./resources/SolubilityProblem');
 
 var corectScoreAmount = 0;
 var incorrectScoreAmount = 0;
